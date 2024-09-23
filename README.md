@@ -14,7 +14,7 @@ We are building a simple shopping application where users can create accounts, b
 | Bhumika Ramesh    | Account Management |
 | Sai Rachana Venna | Products and Categories |
 | Saalim            | Orders and Cart Module |
-| Likith            | |
+| Likith Reddy Vangumalla | Payments and Transaction Management|
 
 **Initial key features for each of the members of the team**
 ---
@@ -30,12 +30,13 @@ Products can also be filtered based on the name and the price properties. Produc
 All the CRUD operations and the services related to products and their categories will also be handled in this module. 
 Unit tests relevant to this module will also be created. 
 
-Likith
-
 _Saalim_
 
 I will focus on developing the Orders and Cart module. This module will allow users to add products to their cart, view their cart, and modify the items or quantities in their cart. Additionally, I will implement functionality for placing orders, tracking the order status, and storing order details in the database. The module will also include calculating totals, managing cart items in session, and ensuring smooth transition from cart to order placement. I will also ensure that users can view their past orders and receive order confirmations.
 
+_Likith Reddy Vangumalla_
+
+I will handle the Payments module, focusing on integrating secure payment methods such as credit cards and digital wallets. This module will process transactions, manage payment validation, and ensure encrypted data handling. I will also implement features for transaction failure management, payment confirmations, and storing transaction history. Additionally, the module will smoothly integrate with the cart and order modules to provide a seamless user experience. Unit tests will ensure the reliability and security of the payment system.
 
 **Github location**
 ---
@@ -47,7 +48,7 @@ Brain storm together and decide based on what majority of the team members agree
 
 **Communication Mechanism**
 ---
-Primary - Teams chat for day-to-day communication.
+Primary - Microsoft Teams chat for day-to-day communication.
 Secondary - Email for official communication and GitHub for issue tracking.
 Meetings - Weekly virtual meetings via Teams to review progress and assign new tasks.
 
