@@ -13,7 +13,7 @@ We are building a simple shopping application where users can create accounts, b
 |------------------ | --------------- |
 | Bhumika Ramesh    | Account Management |
 | Sai Rachana Venna | Products and Categories |
-| Saalim            | |
+| Saalim            | Orders and Cart Module |
 | Likith            | |
 
 **Initial key features for each of the members of the team**
@@ -32,7 +32,10 @@ Unit tests relevant to this module will also be created.
 
 Likith
 
-Saalim
+_Saalim_
+
+I will focus on developing the Orders and Cart module. This module will allow users to add products to their cart, view their cart, and modify the items or quantities in their cart. Additionally, I will implement functionality for placing orders, tracking the order status, and storing order details in the database. The module will also include calculating totals, managing cart items in session, and ensuring smooth transition from cart to order placement. I will also ensure that users can view their past orders and receive order confirmations.
+
 
 **Github location**
 ---
@@ -44,7 +47,7 @@ Brain storm together and decide based on what majority of the team members agree
 
 **Communication Mechanism**
 ---
-Primary - WhatsApp for day-to-day communication.
+Primary - Teams chat for day-to-day communication.
 Secondary - Email for official communication and GitHub for issue tracking.
 Meetings - Weekly virtual meetings via Teams to review progress and assign new tasks.
 
@@ -62,7 +65,7 @@ Meetings - Weekly virtual meetings via Teams to review progress and assign new t
 **Meeting Journal**
 ---
 We all communicated through MS Teams and discussed different project ideas.
-We then decided to proceed with E-commerce application which is to develop a shopping application
+We then decided to proceed with E-commerce application which is to develop a shopping application.
 We then identified the project scope and divided the project into 4 main parts (each part would be handled by one team member)
 We then created a Git Hub repository for the project.
 We then created the base or skeleton code using the spring initializer adding all the above mentioned dependencies and pushed it to the repository.
