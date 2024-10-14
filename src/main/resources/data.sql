@@ -16,3 +16,22 @@ INSERT INTO product (name, description, price, category_id) VALUES
 ('Coffee Maker', 'Brew coffee with ease using this automatic coffee maker', 99.99, 3),
 ('Microwave Oven', 'Countertop Microwave in stainless steel', 169.99, 3);
 
+-- Insert data into the customer table
+INSERT INTO customer (customer_id, first_name, last_name, email) 
+VALUES (1, 'John', 'Doe', 'john.doe@example.com'), 
+       (2, 'Jane', 'Smith', 'jane.smith@example.com');
+
+-- Insert data into the customer_order table
+INSERT INTO customer_order (order_date, total_amount, customer_id) 
+VALUES ('2024-10-01', 59.99, 1), 
+       ('2024-10-02', 1299.99, 2);
+
+-- Insert data into the cart table
+INSERT INTO cart (total_amount, customer_id) 
+VALUES (59.99, 1), 
+       (1299.99, 2);
+
+-- Insert data into the cart_item table
+INSERT INTO cart_item (quantity, price, cart_id, product_id) 
+VALUES (1, 59.99, 1, 1), 
+       (1, 1299.99, 2, 4);
