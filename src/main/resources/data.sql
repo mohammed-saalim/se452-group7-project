@@ -35,3 +35,10 @@ VALUES (59.99, 1),
 INSERT INTO cart_item (quantity, price, cart_id, product_id) 
 VALUES (1, 59.99, 1, 1), 
        (1, 1299.99, 2, 4);
+
+-- Shipping (@author: Pritiv Janarthanan):
+
+-- Insert data into the shipping table
+INSERT INTO shipping (status, tracking_number, order_id) VALUES
+('Pending', 'TRK123456789', 1),
+('Shipped', 'TRK987654321', 2);
