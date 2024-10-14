@@ -5,7 +5,7 @@ This repository serves as the group project for SE452 - Group 7 - Fall 2024
 **Project Scope Area**
 ---
 _E-commerce Application_: 
-We are building a simple shopping application where users can create accounts, browse different products and categories, place orders, and make payments within the app.
+We are building a simple shopping application where users can create accounts, browse different products and categories, place orders, make payments and also give and see reviews and ratings within the app.
 
 **Project Members**
 ---
@@ -65,14 +65,14 @@ Meetings - Weekly virtual meetings via Teams to review progress and assign new t
 
 **Meeting Journal**
 ---
-We all communicated through MS Teams and discussed different project ideas.
-We then decided to proceed with E-commerce application which is to develop a shopping application.
-We then identified the project scope and divided the project into 4 main parts (each part would be handled by one team member)
-We then created a Git Hub repository for the project.
-We then created the base or skeleton code using the spring initializer adding all the above mentioned dependencies and pushed it to the repository.
-Then each member updated the README file with the information regarding the functional area handled by them and pushed the changes to the repository. 
+We all communicated through MS Teams and firstly we discussed about the new functionality to add to our project scope as we had a new member joining the team.
+We then finalized the new functionality as Reviews and Ratings to include in our project scope for the new member.
+We then discussed about what dependencies and features we would add to each of our functionalities that we have selected to display persistence.
+We then proceeded to work on the persistence code related to each of our functionalities that we have taken individually.
+After pushing the code changes to the git repository, we then connected again to review the updated code and do the pull request approvals and code merges.
+ 
 
 **Screenshots of working code (clean compile)**
 ---
-![Alt text](image.png)
-![Alt text](image-1.png)
+![Alt text](Screenshot1.png)
+![Alt text](Screenshot2.png)
