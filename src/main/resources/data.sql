@@ -16,10 +16,18 @@ INSERT INTO product (name, description, price, category_id) VALUES
 ('Coffee Maker', 'Brew coffee with ease using this automatic coffee maker', 99.99, 3),
 ('Microwave Oven', 'Countertop Microwave in stainless steel', 169.99, 3);
 
--- Insert data into the customer table
-INSERT INTO customer (customer_id, first_name, last_name, email) 
-VALUES (1, 'John', 'Doe', 'john.doe@example.com'), 
-       (2, 'Jane', 'Smith', 'jane.smith@example.com');
+-- Accounts (@author: Bhumika Ramesh):
+-- Insert Accounts
+INSERT INTO account (id, username, password)
+VALUES
+(1, 'john_doe', 'password123'),
+(2, 'jane_smith', 'securepassword');
+ 
+-- Insert Customers
+INSERT INTO customer (customer_id, account_id, first_name, last_name, email)
+VALUES
+(1, 1, 'John', 'Doe', 'john.doe@example.com'),
+(2, 2, 'Jane', 'Smith', 'jane.smith@example.com');
 
 -- Orders (@author: Mohammed Saalim Kartapillai):
 
