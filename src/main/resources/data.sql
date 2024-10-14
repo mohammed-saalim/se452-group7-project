@@ -21,6 +21,8 @@ INSERT INTO customer (customer_id, first_name, last_name, email)
 VALUES (1, 'John', 'Doe', 'john.doe@example.com'), 
        (2, 'Jane', 'Smith', 'jane.smith@example.com');
 
+-- Orders (@author: Mohammed Saalim Kartapillai):
+
 -- Insert data into the customer_order table
 INSERT INTO customer_order (order_date, total_amount, customer_id) 
 VALUES ('2024-10-01', 59.99, 1), 
