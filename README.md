@@ -40,6 +40,7 @@ _Likith Reddy Vangumalla_
 I will handle the Payments module, focusing on integrating secure payment methods such as credit cards and digital wallets. This module will process transactions, manage payment validation, and ensure encrypted data handling. I will also implement features for transaction failure management, payment confirmations, and storing transaction history. Additionally, the module will smoothly integrate with the cart and order modules to provide a seamless user experience. Unit tests will ensure the reliability and security of the payment system.
 
 _Pritiv Janarthanan_  
+
 For the Shipping module, I will focus on handling shipping details for orders. This includes creating shipping records, associating them with specific orders, and tracking their shipping status. The module will also allow for the modification of shipping details and status updates. Additionally, I will add unit tests to verify the accuracy and functionality of the Shipping module.
 
 
