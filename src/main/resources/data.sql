@@ -16,8 +16,6 @@ INSERT INTO product (name, description, price, category_id) VALUES
 ('Coffee Maker', 'Brew coffee with ease using this automatic coffee maker', 99.99, 3),
 ('Microwave Oven', 'Countertop Microwave in stainless steel', 169.99, 3);
 
-<<<<<<< HEAD
-=======
 -- Accounts (@author: Bhumika Ramesh):
 -- Insert Accounts
 INSERT INTO account (id, username, password)
