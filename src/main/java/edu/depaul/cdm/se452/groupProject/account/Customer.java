@@ -8,7 +8,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+
 import java.util.List;
 
 import edu.depaul.cdm.se452.groupProject.orders.Cart;
@@ -20,7 +23,7 @@ import edu.depaul.cdm.se452.groupProject.orders.CustomerOrder;
 @Entity
 public class Customer {
 
-  @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerId;
 
@@ -28,41 +31,16 @@ public class Customer {
     private String lastName;
     private String email;
 
+    // Relationship with Account: One customer can have one account
+    @OneToOne
+    @JoinColumn(name = "account_id") // Foreign key in the Customer table
+    private Account account; // A Customer belongs to one Account
+
+    // Relationship with Cart: One customer can have multiple carts
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Cart> carts;
 
+    // Relationship with CustomerOrder: One customer can have multiple orders
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CustomerOrder> orders;
-
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
