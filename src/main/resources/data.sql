@@ -19,13 +19,13 @@ INSERT INTO product (name, description, price, category_id) VALUES
 -- Accounts (@author: Bhumika Ramesh):
 -- Insert Accounts
 INSERT INTO account (id, username, password)
-VALUES 
+VALUES
 (1, 'john_doe', 'password123'),
 (2, 'jane_smith', 'securepassword');
-
+ 
 -- Insert Customers
 INSERT INTO customer (customer_id, account_id, first_name, last_name, email)
-VALUES 
+VALUES
 (1, 1, 'John', 'Doe', 'john.doe@example.com'),
 (2, 2, 'Jane', 'Smith', 'jane.smith@example.com');
 
@@ -53,4 +53,3 @@ VALUES (1, 59.99, 1, 1),
 INSERT INTO shipping (status, tracking_number, order_id) VALUES
 ('Pending', 'TRK123456789', 1),
 ('Shipped', 'TRK987654321', 2);
->>>>>>> a53205c (Persistence code for Account and Customer)
