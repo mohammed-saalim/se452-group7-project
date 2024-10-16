@@ -53,3 +53,8 @@ VALUES (1, 59.99, 1, 1),
 INSERT INTO shipping (status, tracking_number, order_id) VALUES
 ('Pending', 'TRK123456789', 1),
 ('Shipped', 'TRK987654321', 2);
+
+-- Payment (@author: Likith Reddy):
+
+INSERT INTO payment (payment_method, amount, status, order_id) 
+VALUES ('CREDIT_CARD', 100.00, 'SUCCESS', 1);
