@@ -1,4 +1,4 @@
-package edu.depaul.cdm.se452.groupProject.payment;
+package edu.depaul.cdm.se452.groupProject.payments;
 
 import jakarta.persistence.*;
 import edu.depaul.cdm.se452.groupProject.orders.CustomerOrder;
