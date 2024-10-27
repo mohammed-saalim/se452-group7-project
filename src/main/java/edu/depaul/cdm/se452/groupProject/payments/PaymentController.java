@@ -12,7 +12,8 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @GetMapping
-    public List<Payment> getAllPayments() {
+    public List<Payment> getAllPayments()
+    {
         return paymentService.findAll();
     }
 

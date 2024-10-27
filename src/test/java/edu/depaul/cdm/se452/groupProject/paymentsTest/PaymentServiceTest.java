@@ -39,7 +39,6 @@ class PaymentServiceTest {
         paymentRepository.save(payment); // Save payment to the in-memory database
 
         List<Payment> result = paymentService.findAll();
-
         assertEquals(1, result.size());
         assertEquals(payment, result.get(0)); // Verify the saved payment
     }
@@ -47,7 +46,6 @@ class PaymentServiceTest {
     @Test
     void testSave() {
         Payment result = paymentService.save(payment);
-
         assertEquals(payment, result); // Verify the saved payment
         assertEquals(1, paymentRepository.findAll().size()); // Verify size after saving
     }
@@ -55,9 +53,7 @@ class PaymentServiceTest {
     @Test
     void testFindById() {
         Payment savedPayment = paymentRepository.save(payment); // Save payment to get the ID
-
         Payment result = paymentService.findById(savedPayment.getId()); // Use the generated ID
-
         assertEquals(savedPayment, result); // Verify the payment fetched by ID
     }
 }
