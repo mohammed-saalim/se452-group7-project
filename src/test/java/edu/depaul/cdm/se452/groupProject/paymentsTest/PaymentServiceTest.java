@@ -39,6 +39,7 @@ class PaymentServiceTest {
         paymentRepository.save(payment); // Save payment to the in-memory database
 
         List<Payment> result = paymentService.findAll();
+
         assertEquals(1, result.size());
         assertEquals(payment, result.get(0)); // Verify the saved payment
     }
