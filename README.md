@@ -71,10 +71,10 @@ Meetings - Weekly virtual meetings via Teams to review progress and assign new t
 
 **Meeting Journal**
 ---
-We all communicated through MS Teams and firstly we discussed about the new functionality to add to our project scope as we had a new member joining the team.
-We then finalized the new functionality as Shipping to include in our project scope for the new member.
-We then discussed about what dependencies and features we would add to each of our functionalities that we have selected to display persistence.
-We then proceeded to work on the persistence code related to each of our functionalities that we have taken individually.
+We all had a connect and firstly we discussed about the feedback received for Milestone 2.
+We then tried to fix the issues mentioned in the git hub repository for Milestone 2.
+After fixing them, we then discussed about what dependencies and features we would add to each of our functionalities that we have selected to display non persistence for Milestone 3.
+We then proceeded to work on the non persistence code related to each of our functionalities that we have taken individually.
 After pushing the code changes to the git repository, we then connected again to review the updated code and do the pull request approvals and code merges.
  
 
@@ -82,3 +82,4 @@ After pushing the code changes to the git repository, we then connected again to
 ---
 ![Alt text](Screenshot1.png)
 ![Alt text](Screenshot2.png)
+![Alt text](Screenshot3.png)
