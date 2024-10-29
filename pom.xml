@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>edu.depaul.cdm.se452</groupId>
 	<artifactId>groupProject</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>0.3.0-SNAPSHOT</version>
 	<name>groupProject</name>
 	<description>SE452 Group Project 7</description>
 	<url/>

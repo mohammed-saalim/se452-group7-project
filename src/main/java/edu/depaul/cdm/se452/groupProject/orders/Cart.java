@@ -2,6 +2,8 @@ package edu.depaul.cdm.se452.groupProject.orders;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import edu.depaul.cdm.se452.groupProject.account.Customer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,15 +22,16 @@ public class Cart {
 
     private double totalAmount;
 
-    @ManyToOne
+    @JsonBackReference
+    @OneToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CartItem> cartItems;
 
-     // Getter and Setter for customerId
-     public Long getCustomerId() {
+    // Getter and Setter for customerId
+    public Long getCustomerId() {
         return id;
     }
 
