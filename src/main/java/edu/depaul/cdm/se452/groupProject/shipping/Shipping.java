@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Shipping {
+public class Shipping { //Model
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
