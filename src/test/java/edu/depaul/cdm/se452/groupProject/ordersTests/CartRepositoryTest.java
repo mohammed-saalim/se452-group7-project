@@ -12,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import edu.depaul.cdm.se452.groupProject.orders.Cart;
 import edu.depaul.cdm.se452.groupProject.orders.CartRepository;
+import edu.depaul.cdm.se452.groupProject.orders.OrderRepository;
+import edu.depaul.cdm.se452.groupProject.payments.PaymentRepository;
 import edu.depaul.cdm.se452.groupProject.account.Customer;
 import edu.depaul.cdm.se452.groupProject.account.CustomerRepository;
 
@@ -22,11 +24,18 @@ public class CartRepositoryTest {
     private CartRepository cartRepository;
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private OrderRepository orderRepository;
 
+    @Autowired
+    private CustomerRepository customerRepository;
+     @Autowired
+    private PaymentRepository paymentRepository;
+   
     @BeforeEach
     void cleanDatabase() {
+        paymentRepository.deleteAll();
         cartRepository.deleteAll();
+        orderRepository.deleteAll();
         customerRepository.deleteAll();
     }
 
