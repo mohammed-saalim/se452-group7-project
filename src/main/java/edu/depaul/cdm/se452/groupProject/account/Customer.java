@@ -32,7 +32,7 @@ public class Customer {
     private String email;
 
     // Relationship with Account: One customer can have one account
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id") // Foreign key in the Customer table
     private Account account; // A Customer belongs to one Account
 
