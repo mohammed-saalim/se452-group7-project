@@ -32,6 +32,6 @@ public class Customer {
     private String email;
     private String username;
     private String password;
-
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CustomerOrder> orders;
 }
