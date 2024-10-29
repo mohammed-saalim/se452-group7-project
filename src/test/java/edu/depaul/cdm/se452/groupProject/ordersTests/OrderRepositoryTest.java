@@ -9,7 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
- 
+
+import edu.depaul.cdm.se452.groupProject.orders.CartRepository;
 import edu.depaul.cdm.se452.groupProject.orders.CustomerOrder;
 import edu.depaul.cdm.se452.groupProject.orders.OrderRepository;
 import edu.depaul.cdm.se452.groupProject.payments.PaymentRepository;
@@ -24,12 +25,16 @@ public class OrderRepositoryTest {
  
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private CartRepository cartRepository;
  
     @Autowired
     private PaymentRepository paymentRepository;
  
     @BeforeEach
     void cleanDatabase() {
+        cartRepository.deleteAll();
         paymentRepository.deleteAll();
         orderRepository.deleteAll();
         customerRepository.deleteAll();
