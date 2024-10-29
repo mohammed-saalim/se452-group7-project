@@ -1,28 +1,3 @@
-2024-10-28 19:09:13,143 INFO o.s.b.StartupInfoLogger [main] Starting ProductRepositoryTest using Java 21.0.4 with PID 66028 (started by venna in C:\Users\venna\Desktop\OOEC\Milestone_3\Group_Project\se452-group7-project)
-2024-10-28 19:09:13,152 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "local"
-2024-10-28 19:09:17,854 INFO o.s.b.StartupInfoLogger [main] Started ProductRepositoryTest in 5.062 seconds (process running for 6.67)
-2024-10-28 19:09:18,755 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 7
-2024-10-28 19:09:18,772 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 8
-2024-10-28 19:09:18,773 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 9
-2024-10-28 19:09:18,789 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 10
-2024-10-28 19:09:18,819 INFO e.d.c.s.g.p.CategoryService [main] Category updated successfully with ID: 10
-2024-10-28 19:09:18,829 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 11
-2024-10-28 19:09:18,840 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 12
-2024-10-28 19:09:18,846 INFO e.d.c.s.g.p.CategoryService [main] Category deleted successfully with ID: 12
-2024-10-28 19:09:18,858 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 13
-2024-10-28 19:09:18,919 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 16
-2024-10-28 19:09:18,924 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 14
-2024-10-28 19:09:18,938 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 17
-2024-10-28 19:09:18,939 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 15
-2024-10-28 19:09:18,943 INFO e.d.c.s.g.p.ProductService [main] Product updated successfully with ID: 15
-2024-10-28 19:09:18,955 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 18
-2024-10-28 19:09:18,956 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 16
-2024-10-28 19:09:18,957 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 17
-2024-10-28 19:09:18,970 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 19
-2024-10-28 19:09:18,971 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 18
-2024-10-28 19:09:18,980 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 20
-2024-10-28 19:09:18,982 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 19
-2024-10-28 19:09:19,334 INFO e.d.c.s.g.p.ProductService [main] Product deleted successfully with ID: 19
-2024-10-28 19:09:19,344 INFO e.d.c.s.g.p.CategoryService [main] Category created successfully with ID: 21
-2024-10-28 19:09:19,346 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 20
-2024-10-28 19:09:19,348 INFO e.d.c.s.g.p.ProductService [main] Product created successfully with ID: 21
+2024-10-29 00:13:53,190 INFO o.s.b.StartupInfoLogger [restartedMain] Starting GroupProjectApplication using Java 21.0.4 with PID 38268 (C:\Users\bhumi\groupProject\target\classes started by bhumi in C:\Users\bhumi\groupProject)
+2024-10-29 00:13:53,205 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
+2024-10-29 00:14:01,114 INFO o.s.b.StartupInfoLogger [restartedMain] Started GroupProjectApplication in 8.681 seconds (process running for 10.505)

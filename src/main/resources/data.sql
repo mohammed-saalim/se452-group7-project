@@ -18,16 +18,16 @@ INSERT INTO product (name, description, price, category_id) VALUES
 
 -- Accounts (@author: Bhumika Ramesh):
 -- Insert Accounts
-INSERT INTO account (id, username, password)
-VALUES
-(1, 'john_doe', 'password123'),
-(2, 'jane_smith', 'securepassword');
+--INSERT INTO account (id, username, password)
+--VALUES
+--(1, 'john_doe', 'password123'),
+--(2, 'jane_smith', 'securepassword');
  
 -- Insert Customers
-INSERT INTO customer (customer_id, account_id, first_name, last_name, email)
+INSERT INTO customer (customer_id, first_name, last_name, email, username, password)
 VALUES
-(1, 1, 'John', 'Doe', 'john.doe@example.com'),
-(2, 2, 'Jane', 'Smith', 'jane.smith@example.com');
+(1, 'John', 'Doe', 'john.doe@gmail.com', 'jdoe', 'qwerty'),
+(2, 'J', 'D', 'joh.doe@gmail.com', 'doe', 'qwert');
 
 
 -- Orders (@author: Mohammed Saalim Kartapillai):
