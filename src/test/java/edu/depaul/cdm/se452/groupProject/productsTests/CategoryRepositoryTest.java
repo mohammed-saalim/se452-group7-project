@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import edu.depaul.cdm.se452.groupProject.orders.CartRepository;
 import edu.depaul.cdm.se452.groupProject.products.Category;
 import edu.depaul.cdm.se452.groupProject.products.CategoryRepository;
 
@@ -19,8 +20,12 @@ public class CategoryRepositoryTest {
     @Autowired
     private CategoryRepository categoryRepo;
 
+    @Autowired
+    private CartRepository cartRepo;
+
     @BeforeEach
     void cleanDatabase() {
+        cartRepo.deleteAll();
         categoryRepo.deleteAll();
     }
 
@@ -33,7 +38,7 @@ public class CategoryRepositoryTest {
 
         Optional<Category> retrievedCategory = categoryRepo.findById(savedCategory.getId());
         assertNotNull(retrievedCategory);
-        assertEquals(retrievedCategory.get().getName(),"Electronics");
+        assertEquals("Electronics", retrievedCategory.get().getName());
     }
 
     @Test
@@ -44,7 +49,7 @@ public class CategoryRepositoryTest {
 
         Category retrievedCategory = categoryRepo.findByName("Clothing");
         assertNotNull(retrievedCategory);
-        assertEquals(retrievedCategory.getName(), "Clothing");
+        assertEquals("Clothing", retrievedCategory.getName());
     }
     
 }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import edu.depaul.cdm.se452.groupProject.orders.CartRepository;
 import edu.depaul.cdm.se452.groupProject.products.Category;
 import edu.depaul.cdm.se452.groupProject.products.CategoryRepository;
 import edu.depaul.cdm.se452.groupProject.products.Product;
@@ -24,8 +25,12 @@ public class ProductRepositoryTest {
     @Autowired
     private CategoryRepository categoryRepo;
 
+    @Autowired
+    private CartRepository cartRepo;
+
     @BeforeEach
     void cleanDatabase() {
+        cartRepo.deleteAll();
         productRepo.deleteAll();
         categoryRepo.deleteAll();
     }
@@ -45,7 +50,7 @@ public class ProductRepositoryTest {
 
         Product retrievedProduct = productRepo.findByName("Smartphone");
         assertNotNull(retrievedProduct);
-        assertEquals(retrievedProduct.getName(), "Smartphone");
+        assertEquals("Smartphone", retrievedProduct.getName());
     }
 
     @Test
@@ -64,7 +69,7 @@ public class ProductRepositoryTest {
 		
         List<Product> retrievedProducts = productRepo.findByCategoryName("Clothing");
         assertNotNull(retrievedProducts);
-        assertEquals(retrievedProducts.get(0).getName(),"Jeans");
+        assertEquals("Jeans", retrievedProducts.get(0).getName());
 
     }
 
@@ -90,8 +95,8 @@ public class ProductRepositoryTest {
 
         List<Product> retrievedProducts = productRepo.findAll();
         assertNotNull(retrievedProducts);
-        assertEquals(retrievedProducts.get(0).getName(), "Smartphone");
-        assertEquals(retrievedProducts.get(1).getName(), "Laptop");
+        assertEquals("Smartphone", retrievedProducts.get(0).getName());
+        assertEquals("Laptop", retrievedProducts.get(1).getName());
     }
 
 }
