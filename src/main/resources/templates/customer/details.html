@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Customer Details</h2>
+    <p><strong>ID:</strong> <span th:text="${customer.customerId}"></span></p>
+    <p><strong>Name:</strong> <span th:text="${customer.firstName}"></span></p>
+    <p><strong>Email:</strong> <span th:text="${customer.email}"></span></p>
+    <a href="/customer/" class="btn btn-secondary">Back to List</a>
+    <a th:href="@{/customer/edit/{id}(id=${customer.customerId})}" class="btn btn-warning">Edit</a>
+</div>
+</body>
+</html>
