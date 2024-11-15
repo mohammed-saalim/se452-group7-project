@@ -3,20 +3,10 @@ package edu.depaul.cdm.se452.groupProject.account;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import edu.depaul.cdm.se452.groupProject.orders.Cart;
-import edu.depaul.cdm.se452.groupProject.orders.CustomerOrder;
 
 @Data
 @NoArgsConstructor
@@ -32,6 +22,4 @@ public class Customer {
     private String email;
     private String username;
     private String password;
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CustomerOrder> orders;
 }

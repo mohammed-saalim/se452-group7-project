@@ -16,31 +16,31 @@ INSERT INTO product (name, description, price, category_id) VALUES
 ('Coffee Maker', 'Brew coffee with ease using this automatic coffee maker', 99.99, 3),
 ('Microwave Oven', 'Countertop Microwave in stainless steel', 169.99, 3);
 
--- Accounts (@author: Bhumika Ramesh):
--- Insert Accounts
---INSERT INTO account (id, username, password)
---VALUES
---(1, 'john_doe', 'password123'),
---(2, 'jane_smith', 'securepassword');
- 
+-- Accounts (@author: Bhumika Ramesh): 
 -- Insert Customers
 INSERT INTO customer (customer_id, first_name, last_name, email, username, password)
 VALUES
-(1, 'John', 'Doe', 'john.doe@gmail.com', 'jdoe', 'qwerty'),
-(2, 'J', 'D', 'joh.doe@gmail.com', 'doe', 'qwert');
-
+(101, 'Alice', 'Matt', 'alice.matt@gmail.com', 'alicem101', 'AM@55668'),
+(102, 'Betty', 'Ann', 'betty.ann@gmail.com', 'bettya102', 'BA@45666'),
+(103,'Sarah',	'Johnson', 'sarah.johnson@gmail.com', 'sarahj103','SJ@67890'),
+(104,'Michael','Brown', 'michael.brown@gmail.com', 'mikebrown104','MB@11223'),
+(105,'Emily',	'Davis', 'emily.davis@gmail.com', 'emilyd105','ED@44556'),
+(106,'David',	'Wilson', 'david.wilson@gmail.com', 'dwilson106','DW@77889'),
+(107,'Lisa', 'Taylor', 'lisa.taylor@gmail.com', 'lisataylor107','LT@99001'),
+(108,'Robert','Anderson', 'robert.anderson@gmail.com', 'roband108','RA@33445'),
+(109,'Karen','Thomas', 'karen.thomas@gmail.com', 'karent109','KT@55667');
 
 -- Orders (@author: Mohammed Saalim Kartapillai):
 
 -- Insert data into the customer_order table
 INSERT INTO customer_order (order_date, total_amount, customer_id) 
-VALUES ('2024-10-01', 59.99, 1), 
-       ('2024-10-02', 1299.99, 2);
+VALUES ('2024-10-01', 59.99, 101), 
+       ('2024-10-02', 1299.99, 102);
 
 -- Insert data into the cart table
 INSERT INTO cart (total_amount, customer_id) 
-VALUES (59.99, 1), 
-       (1299.99, 2);
+VALUES (59.99, 101), 
+       (1299.99, 102);
 
 -- Insert data into the cart_item table
 INSERT INTO cart_item (quantity, price, cart_id, product_id) 

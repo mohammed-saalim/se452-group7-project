@@ -2,11 +2,14 @@ package edu.depaul.cdm.se452.groupProject.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/customers")
+@Controller
+@RequestMapping("/customer")
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -16,33 +19,52 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @PostMapping
-    public Customer createCustomer(@RequestBody Customer customer) {
-        return customerService.createCustomer(customer);
+    @GetMapping("/")
+    public String getAllCustomers(Model model) {
+        List<Customer> customers = customerService.getAllCustomers();
+        model.addAttribute("customers", customers);
+        return "customer/list";
     }
 
     @GetMapping("/{id}")
-    public Customer getCustomerById(@PathVariable Long id) {
-        return customerService.getCustomerById(id);
+    public String getCustomerById(@PathVariable Long id, Model model) {
+        Customer customer = customerService.getCustomerById(id);
+        model.addAttribute("customer", customer);
+        return "customer/details";
     }
 
-    @GetMapping
-    public List<Customer> getAllCustomers() {
-        return customerService.getAllCustomers();
+    @GetMapping("/new")
+    public String showCreateForm(Model model) {
+        model.addAttribute("customer", new Customer());
+        return "customer/create";
     }
 
-    @PutMapping("/{id}")
-    public Customer updateCustomer(@PathVariable Long id, @RequestBody Customer customerDetails) {
-        return customerService.updateCustomer(id, customerDetails);
+    @PostMapping
+    public String createCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
+        customerService.createCustomer(customer);
+        redirectAttributes.addFlashAttribute("message", "Customer created successfully!");
+        return "redirect:/customer/";
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteCustomer(@PathVariable Long id) {
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable Long id, Model model) {
+        Customer customer = customerService.getCustomerById(id);
+        model.addAttribute("customer", customer);
+        return "customer/edit";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateCustomer(@PathVariable Long id, @ModelAttribute Customer customerDetails,
+            RedirectAttributes redirectAttributes) {
+        customerService.updateCustomer(id, customerDetails);
+        redirectAttributes.addFlashAttribute("message", "Customer updated successfully!");
+        return "redirect:/customer/";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String deleteCustomer(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         customerService.deleteCustomer(id);
-    }
-
-    @GetMapping("/email/{email}")
-    public Customer getCustomerByEmail(@PathVariable String email) {
-        return customerService.findByEmail(email);
+        redirectAttributes.addFlashAttribute("message", "Customer deleted successfully!");
+        return "redirect:/customer/";
     }
 }
