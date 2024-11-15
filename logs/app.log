@@ -1,3 +1,0 @@
-2024-10-29 00:13:53,190 INFO o.s.b.StartupInfoLogger [restartedMain] Starting GroupProjectApplication using Java 21.0.4 with PID 38268 (C:\Users\bhumi\groupProject\target\classes started by bhumi in C:\Users\bhumi\groupProject)
-2024-10-29 00:13:53,205 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "local"
-2024-10-29 00:14:01,114 INFO o.s.b.StartupInfoLogger [restartedMain] Started GroupProjectApplication in 8.681 seconds (process running for 10.505)
