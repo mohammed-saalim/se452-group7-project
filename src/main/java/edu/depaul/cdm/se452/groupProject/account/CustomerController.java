@@ -67,4 +67,41 @@ public class CustomerController {
         redirectAttributes.addFlashAttribute("message", "Customer deleted successfully!");
         return "redirect:/customer/";
     }
+
+    // New API for Signup
+    @GetMapping("/signup")
+    public String showSignupForm(Model model) {
+        model.addAttribute("customer", new Customer());
+        return "customer/signup"; // View for signup form
+    }
+
+    @PostMapping("/signup")
+    public String signupCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes) {
+        if (customerService.findByEmail(customer.getEmail()) != null) {
+            redirectAttributes.addFlashAttribute("error", "Email is already registered!");
+            return "redirect:/customer/signup";
+        }
+        customerService.createCustomer(customer);
+        redirectAttributes.addFlashAttribute("message", "Signup successful! Please login.");
+        return "redirect:/customer/login";
+    }
+
+    // New API for Login
+    @GetMapping("/login")
+    public String showLoginForm(Model model) {
+        model.addAttribute("loginForm", new LoginForm());
+        return "customer/login"; // View for login form
+    }
+
+    @PostMapping("/login")
+    public String loginCustomer(@ModelAttribute LoginForm loginForm, RedirectAttributes redirectAttributes,
+            Model model) {
+        Customer customer = customerService.findByEmail(loginForm.getEmail());
+        if (customer == null || !customer.getPassword().equals(loginForm.getPassword())) {
+            redirectAttributes.addFlashAttribute("error", "Invalid email or password!");
+            return "redirect:/customer/login";
+        }
+        model.addAttribute("customer", customer);
+        return "redirect:/customer/" + customer.getCustomerId(); // Redirect to customer details
+    }
 }
