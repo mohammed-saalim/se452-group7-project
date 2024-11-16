@@ -18,8 +18,8 @@ public class OrderService {
     public List<CustomerOrder> getAllOrders() {
         log.traceEntry("Enter getAllOrders");
         List<CustomerOrder> orderList = StreamSupport
-            .stream(orderRepo.findAll().spliterator(), false)
-            .collect(Collectors.toList());
+                .stream(orderRepo.findAll().spliterator(), false)
+                .collect(Collectors.toList());
         log.traceExit("Exit getAllOrders", orderList);
         return orderList;
     }
@@ -49,18 +49,18 @@ public class OrderService {
     public CustomerOrder updateOrder(Long id, CustomerOrder updatedOrder) {
         log.traceEntry("Enter updateOrder", id);
         return orderRepo.findById(id)
-            .map(order -> {
-                order.setOrderDate(updatedOrder.getOrderDate());
-                order.setTotalAmount(updatedOrder.getTotalAmount());
-                CustomerOrder savedOrder = orderRepo.save(order);
-                log.info("Order updated successfully with ID: {}", savedOrder.getId());
-                log.traceExit("Exit updateOrder");
-                return savedOrder;
-            })
-            .orElseThrow(() -> {
-                log.error("Order with ID: {} not found for update", id);
-                return new IllegalArgumentException("Order not found");
-            });
+                .map(order -> {
+                    order.setOrderDate(updatedOrder.getOrderDate());
+                    order.setTotalAmount(updatedOrder.getTotalAmount());
+                    CustomerOrder savedOrder = orderRepo.save(order);
+                    log.info("Order updated successfully with ID: {}", savedOrder.getId());
+                    log.traceExit("Exit updateOrder");
+                    return savedOrder;
+                })
+                .orElseThrow(() -> {
+                    log.error("Order with ID: {} not found for update", id);
+                    return new IllegalArgumentException("Order not found");
+                });
     }
 
     public void deleteOrder(Long id) {
@@ -73,5 +73,18 @@ public class OrderService {
             log.error("Failed to delete order - Order with ID: {} not found", id);
             throw new IllegalArgumentException("Order not found");
         }
+    }
+
+    // Author: Bhumika Ramesh
+    // Added this function to perform customer deletion operation on cascading
+    // relationships
+    public void deleteCustomerOrder(Long id) {
+        CustomerOrder order = orderRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Order not found"));
+        // Clear related payments if needed
+        if (order.getPayments() != null) {
+            order.getPayments().clear();
+        }
+        orderRepo.delete(order);
     }
 }

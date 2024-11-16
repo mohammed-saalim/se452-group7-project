@@ -15,6 +15,7 @@ public class Payment {
     private double amount;
     private String status;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false) // Ensures a valid CustomerOrder reference
     private CustomerOrder order;
 }

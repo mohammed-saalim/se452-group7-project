@@ -23,7 +23,7 @@ public class Cart {
     private double totalAmount;
 
     @JsonBackReference
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
