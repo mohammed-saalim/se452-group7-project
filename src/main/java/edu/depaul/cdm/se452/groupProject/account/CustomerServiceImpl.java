@@ -2,15 +2,12 @@ package edu.depaul.cdm.se452.groupProject.account;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import edu.depaul.cdm.se452.groupProject.orders.Cart;
 import edu.depaul.cdm.se452.groupProject.orders.CartRepository;
 import edu.depaul.cdm.se452.groupProject.orders.CartService;
 import edu.depaul.cdm.se452.groupProject.orders.OrderRepository;
 import edu.depaul.cdm.se452.groupProject.orders.OrderService;
 import edu.depaul.cdm.se452.groupProject.payments.PaymentService;
 import jakarta.transaction.Transactional;
-
 import java.util.List;
 
 @Service
@@ -67,8 +64,18 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Transactional
-    public void deleteCustomer(Long id) {
-        customerRepository.deleteById(id);
+    public void deleteCustomer(Long customerId) {
+        Customer customer = customerRepository.findById(customerId)
+                .orElseThrow(() -> new RuntimeException("Customer not found"));
+
+        // Ensuring related entities are deleted
+        if (customer.getOrder() != null) {
+            customer.getOrder().clear();
+        }
+        if (customer.getCart() != null) {
+            customer.setCart(null);
+        }
+        customerRepository.delete(customer);
 
     }
 

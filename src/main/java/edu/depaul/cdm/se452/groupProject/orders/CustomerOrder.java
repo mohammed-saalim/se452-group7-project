@@ -1,6 +1,8 @@
 package edu.depaul.cdm.se452.groupProject.orders;
 
+import java.util.List;
 import edu.depaul.cdm.se452.groupProject.account.Customer;
+import edu.depaul.cdm.se452.groupProject.payments.Payment;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,9 +21,14 @@ public class CustomerOrder {
     private String orderDate;
     private double totalAmount;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
+
+    // Author: Bhumika Ramesh
+    // Added this to perform customer deletion operation on cascading relationships
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Payment> payments;
 
     public Long getCustomerId() {
         return id;
