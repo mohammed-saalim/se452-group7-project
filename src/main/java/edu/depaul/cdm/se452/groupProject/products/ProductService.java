@@ -43,10 +43,15 @@ public class ProductService {
         log.traceExit("Exit getProductsByCategoryName", products);
         return products;
     }
-    
+
     // create a new product
     public Product createProduct(Product product) {
         log.traceEntry("Enter createProduct", product);
+
+        if (product.getCategory() == null || product.getCategory().getId() == null) {
+            log.error("Category or category ID is null in the product input");
+            throw new IllegalArgumentException("Category and category ID must not be null");
+        }
 
         // to ensure that the category exists before assigning it to the product
         Optional<Category> category = categoryRepo.findById(product.getCategory().getId());
@@ -64,7 +69,7 @@ public class ProductService {
             // throwing exception when category is not found
             throw new IllegalArgumentException("Category not found");
         }
-    }
+    }   
 
     // update an existing product
     public Product updateProduct(Long id, Product updatedProduct) {

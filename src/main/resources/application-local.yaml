@@ -9,3 +9,16 @@ spring:
     show-sql: true
     hibernate.ddl-auto: create-drop
     defer-datasource-initialization: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
+
+app:
+  doc:
+    version: 2024-Fall
+    title: SE-452 Group7 Project API
+    description: This is a documentation for SE-452 Group7 Project which is an ECommerce-Shopping Application using spring boot.
+    terms-of-service: http://swagger.io/terms/
+    license:  Apache 2.0
+    url: http://springdoc.org   

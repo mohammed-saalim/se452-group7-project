@@ -13,6 +13,8 @@ import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,6 +31,7 @@ public class Category {
     // orphanRemoval = true ensures that if a Product is removed from the Category's products list, it will also be deleted from the database
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude  // To avoid circular references
+    @JsonManagedReference // Marks this as the "parent" in the relationship
     private List<Product> products;
     
 }
