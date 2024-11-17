@@ -27,7 +27,7 @@ _Sai Rachana Venna_
 
 In this module, I will be working on features that would allow the users to browse, search and view the products based on their availability. 
 Each product will be linked to one or more categories that would allow the users to filter the products based on the specific category selection. 
-Products can also be filtered based on the name and the price properties. Product availability will also be tracked and only the available products would be displayed to the users. 
+Product availability will also be tracked and only the available products would be displayed to the users. 
 All the CRUD operations and the services related to products and their categories will also be handled in this module. 
 Unit tests relevant to this module will also be created. 
 

@@ -23,5 +23,14 @@
  * <li>Added comments or documentation for the above mentioned additional logic in ProductService and CategoryService as they were not discussed in class
  * <li>Added unit tests for ProductService and CategoryService to demonstrate that both of them are working 
  * </ul>
+ * 
+ * <b>Final Submission:
+ * <ul>
+ * <li>Created ProductController, CategoryController for Restful services
+ * <li>Added api endpoints for all the product service and category service methods
+ * <li>Added additional documentation at service level for all the product and the category api endpoints
+ * <li>Added comments for sample json inputs for Product Creation and Product Updation to help in testing the api endpoints
+ * <li>Added comments for sample json inputs for Category Creation and Category Updation to help in testing the api endpoints
+ * </ul>
  */
 package edu.depaul.cdm.se452.groupProject.products;
