@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import edu.depaul.cdm.se452.groupProject.orders.Cart;
 import edu.depaul.cdm.se452.groupProject.orders.CustomerOrder;
 import jakarta.persistence.CascadeType;
@@ -34,6 +37,7 @@ public class Customer {
     // Orders and Cart
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude // To avoid circular references
+    @JsonManagedReference
     private List<CustomerOrder> order;
 
     @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -1,8 +1,12 @@
 package edu.depaul.cdm.se452.groupProject.payments;
 
 import jakarta.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import edu.depaul.cdm.se452.groupProject.orders.CustomerOrder;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -17,5 +21,7 @@ public class Payment {
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false) // Ensures a valid CustomerOrder reference
+    @ToString.Exclude
+    @JsonBackReference
     private CustomerOrder order;
 }

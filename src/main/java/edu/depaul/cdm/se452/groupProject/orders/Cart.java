@@ -3,6 +3,7 @@ package edu.depaul.cdm.se452.groupProject.orders;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import edu.depaul.cdm.se452.groupProject.account.Customer;
 import jakarta.persistence.*;
@@ -28,6 +29,7 @@ public class Cart {
     private Customer customer;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<CartItem> cartItems;
 
     // Getter and Setter for customerId
