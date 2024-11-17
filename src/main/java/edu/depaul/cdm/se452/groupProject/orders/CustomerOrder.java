@@ -1,6 +1,10 @@
 package edu.depaul.cdm.se452.groupProject.orders;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import edu.depaul.cdm.se452.groupProject.account.Customer;
 import edu.depaul.cdm.se452.groupProject.payments.Payment;
 import jakarta.persistence.*;
@@ -23,11 +27,12 @@ public class CustomerOrder {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id", nullable = false)
+    @JsonBackReference
     private Customer customer;
 
-    // Author: Bhumika Ramesh
     // Added this to perform customer deletion operation on cascading relationships
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Payment> payments;
 
     public Long getCustomerId() {
