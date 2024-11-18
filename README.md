@@ -74,7 +74,7 @@ Meetings - Weekly virtual meetings via Teams to review progress and assign new t
 We all had a connect and firstly we discussed about the feedback received for Milestone 3.
 We then tried to fix the issue that was mentioned in the git hub repository for Milestone 3.
 After fixing it, we then discussed about what dependencies and features we would add to each of our functionalities that we have selected for the Final submission.
-We then proceeded to work on the restful services related to each of our functionalities that we have taken individually.
+We then proceeded to work on the restful services related to each of our functionalities that we have taken individually and exposed the rest API endpoints using Swagger.
 We also tried to add some UI for signup page and home page using thymeleaf. We also added CI/CD using docker where the project is containerized and the image is hosted on the docker hub.
 Then after pushing the code changes to the git repository, we all connected again to review the updated code and do the pull request approvals and code merges.
  
