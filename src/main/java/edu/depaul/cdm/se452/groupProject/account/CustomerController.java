@@ -101,7 +101,19 @@ public class CustomerController {
             redirectAttributes.addFlashAttribute("error", "Invalid email or password!");
             return "redirect:/customer/login";
         }
+        // model.addAttribute("customer", customer);
+        // return "redirect:/customer/" + customer.getCustomerId(); // Redirect to
+        // customer details
         model.addAttribute("customer", customer);
-        return "redirect:/customer/" + customer.getCustomerId(); // Redirect to customer details
+        return "redirect:/customer/home/" + customer.getCustomerId(); // Redirect to home page
+
+    }
+
+    // Home API
+    @GetMapping("/home/{id}")
+    public String homePage(@PathVariable Long id, Model model) {
+        Customer customer = customerService.getCustomerById(id);
+        model.addAttribute("customer", customer); // Pass customer details to the view
+        return "customer/home"; // This corresponds to your home.html
     }
 }

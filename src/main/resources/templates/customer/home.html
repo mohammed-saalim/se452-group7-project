@@ -26,7 +26,7 @@
                         <a class="nav-link" href="#shipping">Shipping</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/customer/{id}">My Details</a>
+                        <a class="nav-link" href="#myDetails">My Details</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="/customer/">Logout</a>
@@ -38,6 +38,7 @@
 
     <!-- Main Content -->
     <div class="container mt-5">
+        <h1>Welcome, <span th:text="${customer.firstName}">Customer</span>!</h1>
         <!-- My Orders Section -->
         <section id="myOrders" class="mb-5">
             <h2 class="mb-3">My Orders</h2>
@@ -63,7 +64,8 @@
         <section id="myDetails" class="mb-5">
             <h2 class="mb-3">My Details</h2>
             <p>Update your profile and personal information.</p>
-            <a href="customer/{id}" class="btn btn-primary">Edit Details</a>
+            <!--<a href="customer/{id}" class="btn btn-primary">Edit Details</a>-->
+            <a th:href="@{'/customer/' + ${customer.customerId}}" class="btn btn-primary">Edit Details</a>
         </section>
     </div>
 

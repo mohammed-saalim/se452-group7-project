@@ -21,7 +21,7 @@ We are building a simple shopping application where users can create accounts, b
 ---
 _Bhumika Ramesh_
 
-For the account management feature, I will focus on implementing user registration and authentication, allowing users to create accounts securely. This will include functionality for password recovery and reset, ensuring that users can easily regain access if needed. Additionally, I will develop profile management capabilities allowing users to update their personal information.
+For the account management feature, I will focus on implementing user registration and authentication, allowing users to create accounts securely using MySQL as the databse. Additionally, I will develop profile management capabilities allowing users to update their personal information. In the customer management module, I will use Thymeleaf to render dynamic front-end views for operations such as creating, editing, viewing and deleting customer records. I resolved a circular dependency issue encountered during customer deletion to ensure stable data relationships and proper cleanup. Furthermore, I implemented full CRUD functionality and services, enabling customers to manage their profiles effectively. The authentication functionality includes secure sign-in and login features with validation. All APIs related to the customer module were thoroughly tested using Swagger-UI to verify their functionality and performance.
 
 _Sai Rachana Venna_
 
@@ -75,7 +75,7 @@ We all had a connect and firstly we discussed about the feedback received for Mi
 We then tried to fix the issue that was mentioned in the git hub repository for Milestone 3.
 After fixing it, we then discussed about what dependencies and features we would add to each of our functionalities that we have selected for the Final submission.
 We then proceeded to work on the restful services related to each of our functionalities that we have taken individually and exposed the rest API endpoints using Swagger.
-We also tried to add some UI for signup page and home page using thymeleaf. We also added CI/CD using docker where the project is containerized and the image is hosted on the docker hub.
+We also added UI for CRUD operations in account module, signup, login and home page using thymeleaf. We also added CI/CD using docker where the project is containerized and the image is hosted on the docker hub.
 Then after pushing the code changes to the git repository, we all connected again to review the updated code and do the pull request approvals and code merges.
  
 
